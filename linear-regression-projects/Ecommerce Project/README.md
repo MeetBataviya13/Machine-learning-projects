@@ -91,21 +91,6 @@ The model is trained on the **Ecommerce Customers dataset**, containing customer
 - Python 3.8 or higher
 - pip (Python package manager)
 
-### Quick Start
-
-```bash
-# Navigate to project directory
-cd "d:\Machine learning\Linear-Regression-Projects\Ecommerce Project"
-
-# Install dependencies
-pip install -r requirements.txt.txt
-
-# Run the application
-streamlit run app/main.py
-```
-
-🌐 **Access the app at:** `http://localhost:8501`
-
 ---
 
 ## 📖 Usage
@@ -249,7 +234,7 @@ Explore the full training pipeline in `notebook/Ecommerce_linear_regression.ipyn
 
 ## 📝 Requirements
 
-See `requirements.txt.txt` for all dependencies:
+See `requirements.txt` for all dependencies:
 
 ```
 streamlit
@@ -270,7 +255,7 @@ seaborn
 cd "Ecommerce Project"
 
 # 2. Install dependencies
-pip install -r requirements.txt.txt
+pip install -r requirements.txt
 
 # 3. Run Streamlit app
 streamlit run app/main.py
