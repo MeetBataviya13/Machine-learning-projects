@@ -5,8 +5,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import joblib
 from datetime import datetime
-from pathlib import Path
-import os
 
 # Try to import BytesIO for Excel support
 try:
@@ -58,12 +56,7 @@ st.markdown("""
 @st.cache_resource
 def load_model():
     try:
-        # Get the absolute path to the model directory
-        current_dir = Path(__file__).parent
-        model_dir = current_dir.parent / "model"
-        
-        model_path = model_dir / "linear_regression_model.joblib"
-        model = joblib.load(model_path)
+        model = joblib.load("../model/linear_regression_model.joblib")
         
         # Check if model is a pipeline (already includes preprocessing)
         if hasattr(model, 'named_steps'):
@@ -72,8 +65,7 @@ def load_model():
         else:
             # Try to load separate preprocessor
             try:
-                preprocessor_path = model_dir / "preprocessor.joblib"
-                preprocessor = joblib.load(preprocessor_path)
+                prepr ocessor = joblib.load("../model/preprocessor.joblib")
                 return model, preprocessor, True, False
             except:
                 # Model without preprocessor
@@ -121,15 +113,9 @@ with st.sidebar:
 # Check if model is loaded
 if not model_loaded:
     st.error("⚠️ **Model files not found!**")
-    
-    # Get the expected model path for display
-    current_dir = Path(__file__).parent
-    model_dir = current_dir.parent / "model"
-    model_path = model_dir / "linear_regression_model.joblib"
-    
-    st.warning(f"""
+    st.warning("""
     Please ensure the following files exist:
-    - `{model_path}`
+    - `../model/linear_regression_model.joblib`
     
     Train the model first, then run this app.
     """)
