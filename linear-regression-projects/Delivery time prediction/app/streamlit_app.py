@@ -65,7 +65,7 @@ def load_model():
         else:
             # Try to load separate preprocessor
             try:
-                prepr ocessor = joblib.load("../model/preprocessor.joblib")
+                preprocessor = joblib.load("../model/preprocessor.joblib")
                 return model, preprocessor, True, False
             except:
                 # Model without preprocessor

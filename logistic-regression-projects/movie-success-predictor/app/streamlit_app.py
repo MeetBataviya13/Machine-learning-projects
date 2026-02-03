@@ -152,14 +152,17 @@ TOP_DIRECTORS = [
 @st.cache_resource
 def load_models():
     try:
-        logistic_model = joblib.load('../models/logistic_model.joblib')
-        linear_model = joblib.load('../models/linear_model.joblib')
-        ridge_model = joblib.load('../models/ridge_model.joblib')
-        preprocessor = joblib.load('../models/preprocessor.joblib')
-        return logistic_model, linear_model, ridge_model, preprocessor
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        PROJECT_ROOT = os.path.dirname(BASE_DIR)
+
+        logistic_model = joblib.load(os.path.join(PROJECT_ROOT, "models", "logistic_model.joblib"))
+        linear_model = joblib.load(os.path.join(PROJECT_ROOT, "models", "linear_model.joblib"))
+        ridge_model = joblib.load(os.path.join(PROJECT_ROOT, "models", "ridge_model.joblib"))
+        preprocessor = joblib.load(os.path.join(PROJECT_ROOT, "models", "preprocessor.joblib"))
+        return logistic_model, linear_model, ridge_model, preprocessor , True
     except Exception as e:
         st.warning(f"Models not loaded: {e}")
-        return None, None, None, None
+        return None, None, None, None, False
 
 # Load processed data for reference
 @st.cache_data
