@@ -215,10 +215,8 @@ The dataset contains movie metadata and credits used to engineer features for pr
 - [ ] Experiment with advanced models (Random Forest, XGBoost, Gradient Boosting)
 - [ ] Add model explainability with SHAP/LIME
 - [ ] Improve feature engineering (cast/crew embeddings, NLP on overviews)
-- [ ] Support batch predictions via CSV upload
 - [ ] Build a REST API for predictions
 - [ ] Add model monitoring and retraining pipeline
-- [ ] Deploy the app to cloud (Streamlit Community Cloud/AWS/GCP)
 
 ---
 
