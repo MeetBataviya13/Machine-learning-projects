@@ -194,7 +194,7 @@ def get_season(month):
     return MONTH_TO_SEASON.get(month, "Unknown")
 
 # Load models and data
-logistic_model, linear_model, ridge_model, preprocessor = load_models()
+logistic_model, linear_model, ridge_model, preprocessor, models_loaded = load_models()
 processed_data = load_processed_data()
 
 # Main header
