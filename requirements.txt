@@ -1,7 +1,8 @@
 streamlit
-numpy
 pandas
-scikit-learn
-joblib
+numpy
 matplotlib
 seaborn
+scikit-learn
+joblib
+openpyxl
