@@ -210,7 +210,6 @@ Open Source Project - Feel free to use and modify as needed.
 Created as a Machine Learning project for heart disease risk classification.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/meet-bataviya/)
-
 ---
 
 If you found this helpful, please star the repository.
