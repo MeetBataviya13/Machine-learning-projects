@@ -12,6 +12,8 @@
 **Predict annual customer spending based on customer engagement metrics**  
 *Linear Regression model trained on real ecommerce customer data*
 
+**Live App**: <https://linear-regression-ecommerce.streamlit.app/>
+
 [Overview](#overview) • [Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Project Structure](#-project-structure)
 
 </div>
@@ -290,7 +292,6 @@ Potential enhancements for the project:
 - 📊 **Model Comparison Dashboard** - Side-by-side performance metrics
 - 🔐 **User Authentication** - Secure login and user profiles
 - 🗄️ **Database Integration** - Store predictions and user data
-- ☁️ **Cloud Deployment** - Deploy on AWS/Azure/GCP
 - 📑 **Automated Report Generation** - Export prediction reports as PDF
 
 ---
