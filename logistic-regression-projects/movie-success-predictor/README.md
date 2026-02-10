@@ -12,6 +12,8 @@
 **Predict whether a movie is a hit or flop and estimate its rating**  
 *Classification + regression models trained on TMDB data*
 
+**Live App**: <https://logistic-regression-moviesucess.streamlit.app/>
+
 [Overview](#-overview) • [Features](#-features) • [Screenshots](#-screenshots) • [Installation](#-installation) • [Usage](#-usage) • [Project Structure](#-project-structure) • [Dataset](#-dataset)
 
 </div>
