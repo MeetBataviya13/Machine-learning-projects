@@ -11,6 +11,8 @@
 
 Predict heart disease risk from clinical measurements using a K-Nearest Neighbors model.
 
+**Live Hosted**: <http://knn-classification-heartdisease.streamlit.app/>
+
 [Overview](#-overview) • [Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Project Structure](#-project-structure) • [Dataset](#-dataset)
 
 </div>
@@ -183,7 +185,6 @@ The dataset contains patient-level clinical features used to predict heart disea
 - [ ] Add model explainability with SHAP/LIME
 - [ ] Improve data validation for uploaded batch files
 - [ ] Add a REST API for predictions
-- [ ] Deploy the app to cloud hosting
 
 ---
 
