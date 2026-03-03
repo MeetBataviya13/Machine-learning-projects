@@ -1,3 +1,5 @@
+import os
+
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -52,26 +54,32 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Load pre-trained model
 @st.cache_resource
 def load_model():
     try:
-        model = joblib.load("../model/linear_regression_model.joblib")
+        # Get absolute path of current script
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
         
-        # Check if model is a pipeline (already includes preprocessing)
+        model_path = os.path.join(BASE_DIR, "model", "linear_regression_model.joblib")
+        preprocessor_path = os.path.join(BASE_DIR, "model", "preprocessor.joblib")
+
+        model = joblib.load(model_path)
+
+        # Check if model is a pipeline
         if hasattr(model, 'named_steps'):
-            # It's a pipeline - no separate preprocessor needed
             return model, None, True, True
         else:
-            # Try to load separate preprocessor
-            try:
-                preprocessor = joblib.load("../model/preprocessor.joblib")
+            # Try loading preprocessor separately
+            if os.path.exists(preprocessor_path):
+                preprocessor = joblib.load(preprocessor_path)
                 return model, preprocessor, True, False
-            except:
-                # Model without preprocessor
+            else:
                 return model, None, True, False
-    except FileNotFoundError:
+
+    except Exception as e:
+        print("Model loading error:", e)
         return None, None, False, False
+
 
 model, preprocessor, model_loaded, is_pipeline = load_model()
 
