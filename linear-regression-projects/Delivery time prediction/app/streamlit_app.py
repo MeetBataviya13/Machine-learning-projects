@@ -57,19 +57,19 @@ st.markdown("""
 @st.cache_resource
 def load_model():
     try:
-        # Get absolute path of current script
         BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-        
-        model_path = os.path.join(BASE_DIR, "model", "linear_regression_model.joblib")
-        preprocessor_path = os.path.join(BASE_DIR, "model", "preprocessor.joblib")
+
+        # Go one level up from /app
+        PROJECT_ROOT = os.path.dirname(BASE_DIR)
+
+        model_path = os.path.join(PROJECT_ROOT, "model", "linear_regression_model.joblib")
+        preprocessor_path = os.path.join(PROJECT_ROOT, "model", "preprocessor.joblib")
 
         model = joblib.load(model_path)
 
-        # Check if model is a pipeline
         if hasattr(model, 'named_steps'):
             return model, None, True, True
         else:
-            # Try loading preprocessor separately
             if os.path.exists(preprocessor_path):
                 preprocessor = joblib.load(preprocessor_path)
                 return model, preprocessor, True, False
