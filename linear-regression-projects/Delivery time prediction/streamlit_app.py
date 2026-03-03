@@ -57,13 +57,8 @@ st.markdown("""
 @st.cache_resource
 def load_model():
     try:
-        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-        # Go one level up from /app
-        PROJECT_ROOT = os.path.dirname(BASE_DIR)
-
-        model_path = os.path.join(PROJECT_ROOT, "model", "linear_regression_model.joblib")
-        preprocessor_path = os.path.join(PROJECT_ROOT, "model", "preprocessor.joblib")
+        model_path = os.path.join("model", "linear_regression_model.joblib")
+        preprocessor_path = os.path.join("model", "preprocessor.joblib")
 
         model = joblib.load(model_path)
 
