@@ -57,8 +57,10 @@ st.markdown("""
 @st.cache_resource
 def load_model():
     try:
-        model_path = os.path.join("model", "linear_regression_model.joblib")
-        preprocessor_path = os.path.join("model", "preprocessor.joblib")
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+        model_path = os.path.join(BASE_DIR, "model", "linear_regression_model.joblib")
+        preprocessor_path = os.path.join(BASE_DIR, "model", "preprocessor.joblib")
 
         model = joblib.load(model_path)
 
@@ -74,9 +76,6 @@ def load_model():
     except Exception as e:
         print("Model loading error:", e)
         return None, None, False, False
-
-
-model, preprocessor, model_loaded, is_pipeline = load_model()
 
 # Header
 st.markdown('<p class="main-header">🍕 Food Delivery Time Predictor</p>', unsafe_allow_html=True)
